@@ -44,6 +44,8 @@ struct MenuView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             show = false
@@ -157,6 +159,8 @@ struct DeleteAccount: View {
                     .padding(.bottom)
                 
                 Button(action: {
+                    
+                    UIApplication.shared.endEditing()
                     
                     withAnimation(.spring()) {
                         

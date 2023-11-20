@@ -27,6 +27,8 @@ struct FinanceView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             show = true
@@ -60,6 +62,8 @@ struct FinanceView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             viewModel.isNewEarning = true
@@ -83,6 +87,8 @@ struct FinanceView: View {
                         ForEach(viewModel.months, id: \.self) { index in
                             
                             Button(action: {
+                                
+                                UIApplication.shared.endEditing()
                                 
                                 viewModel.current_month = index
                                 
@@ -169,6 +175,8 @@ struct FinanceView: View {
                         
                         Button(action: {
                             
+                            UIApplication.shared.endEditing()
+                            
                             router.wrappedValue.dismiss()
                             
                         }, label: {
@@ -220,7 +228,16 @@ struct FinanceView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         viewModel.earnings.append("$\(viewModel.earningDate)             \(viewModel.earningSum)")
+                        
+                        withAnimation(.spring()) {
+                            
+                            viewModel.isNewEarning = false
+                        }
+                        
+                        viewModel.earningSum = ""
                         
                     }, label: {
                         
@@ -233,6 +250,8 @@ struct FinanceView: View {
                             .padding(.top, 25)
                         
                     })
+                    .opacity(viewModel.earningSum.isEmpty ? 0.5 : 1)
+                    .disabled(viewModel.earningSum.isEmpty ? true : false)
                     //                    .opacity(viewModel.cur_curr.isEmpty || viewModel.selectedPortfolioForAdd.isEmpty ? 0.5 : 1)
                     //                    .disabled(viewModel.cur_curr.isEmpty || viewModel.selectedPortfolioForAdd.isEmpty ? true : false)
                 }

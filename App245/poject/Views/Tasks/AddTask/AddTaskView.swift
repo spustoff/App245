@@ -31,6 +31,8 @@ struct AddTaskView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         router.wrappedValue.dismiss()
                         
                     }, label: {
@@ -52,6 +54,8 @@ struct AddTaskView: View {
                     ForEach(viewModel.workers, id: \.self) { index in
                         
                         Button(action: {
+                            
+                            UIApplication.shared.endEditing()
                             
                             viewModel.selectedWorker = index
                             
@@ -119,6 +123,8 @@ struct AddTaskView: View {
                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                 
                 Button(action: {
+                    
+                    UIApplication.shared.endEditing()
                     
                     viewModel.addTasks {
                         

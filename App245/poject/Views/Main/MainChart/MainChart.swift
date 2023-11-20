@@ -30,6 +30,8 @@ struct MainChart: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         router.wrappedValue.dismiss()
                         
                     }, label: {
@@ -63,6 +65,8 @@ struct MainChart: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         router.wrappedValue.dismiss()
                         
                     }, label: {
@@ -76,6 +80,8 @@ struct MainChart: View {
                     })
                     
                     Button(action: {
+                        
+                        UIApplication.shared.endEditing()
                         
                         router.wrappedValue.dismiss()
                         

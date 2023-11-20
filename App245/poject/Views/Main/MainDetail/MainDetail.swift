@@ -28,6 +28,8 @@ struct MainDetail: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         router.wrappedValue.dismiss()
                         
                     }, label: {
@@ -77,6 +79,8 @@ struct MainDetail: View {
                                 Spacer()
                                 
                                 Button(action: {
+                                    
+                                    UIApplication.shared.endEditing()
                                     
                                     isChart = true
                                     

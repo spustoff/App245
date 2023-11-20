@@ -31,6 +31,8 @@ struct MainAdd: View {
                     Spacer()
                     
                     Button(action: {
+                    
+                        UIApplication.shared.endEditing()
                         
                         router.wrappedValue.dismiss()
                         
@@ -103,6 +105,8 @@ struct MainAdd: View {
                 Spacer()
                 
                 Button(action: {
+                    
+                    UIApplication.shared.endEditing()
                     
                     viewModel.addObject {
                         

@@ -26,6 +26,8 @@ struct WorkersView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             show = true
@@ -59,6 +61,8 @@ struct WorkersView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             viewModel.isAddWorker = true
@@ -91,6 +95,8 @@ struct WorkersView: View {
                         })
                         
                         Button(action: {
+                            
+                            UIApplication.shared.endEditing()
                             
                             withAnimation(.spring()) {
                                 
@@ -178,6 +184,7 @@ struct WorkersView: View {
                         
                         Button(action: {
                             
+                            UIApplication.shared.endEditing()
                             
                             withAnimation(.spring()) {
                                 
@@ -215,6 +222,8 @@ struct WorkersView: View {
                     .padding(.top, 50)
                     
                     Button(action: {
+                        
+                        UIApplication.shared.endEditing()
                         
                         viewModel.workers.append(viewModel.workersName)
                         

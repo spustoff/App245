@@ -26,6 +26,8 @@ struct MainView: View {
                     
                     Button(action: {
                         
+                        UIApplication.shared.endEditing()
+                        
                         withAnimation(.spring()) {
                             
                             show = true
@@ -66,6 +68,8 @@ struct MainView: View {
                         ForEach(viewModel.types, id: \.self) { index in
                             
                             Button(action: {
+                                
+                                UIApplication.shared.endEditing()
                                 
                                 viewModel.current_type = index
                                 
@@ -110,6 +114,8 @@ struct MainView: View {
                             
                                 Button(action: {
                                     
+                                    UIApplication.shared.endEditing()
+                                    
                                     viewModel.isDetail = true
                                     viewModel.selectedObject = index
                                     
@@ -143,6 +149,8 @@ struct MainView: View {
                 }
                 
                 Button(action: {
+                    
+                    UIApplication.shared.endEditing()
                     
                     viewModel.isAdd = true
                     
